@@ -36,7 +36,7 @@ This function recursively renames files and folders and replaces placeholders in
 
 Don't forget to embed a framework:
 
-![Embed Framework](https://example.com/framework_image.png)
+![Embed Framework](https://github.com/Carmudii/ios-project-template/blob/master/resources/screenshot.png?raw=true)
 
 ## License
 
