@@ -8,7 +8,7 @@ This script automates the setup process for iOS projects and modules by renaming
 2. Clone this repository or copy the script content into a new file.
 3. Run the script using the following command:
 
-./generate.sh
+./generate.sh or ./osascript.sh
 
 ## Functions
 
