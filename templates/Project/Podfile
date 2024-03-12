@@ -1,4 +1,4 @@
-# This Podfile is used to manage the dependencies for the com.carmudi.ea project.
+# This Podfile is used to manage the dependencies for the __TEMPLATE__ project.
 #
 # It specifies the workspace, platform, and target modules for the project.
 #
@@ -8,10 +8,9 @@
 # The dependencies are loaded from the 'Dependencies.rb' file.
 #
 # Target Modules:
-# - Common: './Modules/Common'
-# - Market: './Modules/Market'
+# - Example: './Modules/Example'
 #
-# The target configuration for 'com.carmudi.ea' is defined below. It uses the 'com.carmudi.ea.xcodeproj' project and enables the use of frameworks.
+# The target configuration for '__TEMPLATE__' is defined below. It uses the '__TEMPLATE__.xcodeproj' project and enables the use of frameworks.
 #
 # The target inherits dependencies from the modules and adds them as libraries.
 #

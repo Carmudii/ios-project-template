@@ -3,7 +3,7 @@
 # @author = 'carmudi'
 # @email = 'carmudi@engineer.com'
 #
-# This module represents the target configuration for the Common module.
+# This module represents the target configuration for the __MODULE_PREFIX__ module.
 # It contains information such as the name, project file, and dependencies.
 #
 # Example usage:
