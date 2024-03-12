@@ -33,8 +33,7 @@ rename_files_and_folders() {
     local package_name="$5"
 
     # Replacing Project Target
-    # give yello color
-    echo -e "\033[33mRenaming files and folders in $directory\033[0m"
+    # echo -e "\033[33mRenaming files and folders in $directory\033[0m"
     if [ "$project_type" == "2" ]; then
         # Replace placeholders
         LC_ALL=C find "$directory" -depth -type f -exec sed -i '' -e "s/__PACKAGE__/$package_name/g" {} \;

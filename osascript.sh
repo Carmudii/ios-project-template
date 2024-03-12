@@ -35,8 +35,7 @@ rename_files_and_folders() {
     local package_name="$5"
 
     # Replacing Project Target
-    # give yello color
-    echo -e "\033[33mRenaming files and folders in $directory\033[0m"
+    # echo -e "\033[33mRenaming files and folders in $directory\033[0m"
     if [ "$project_type" == "2" ]; then
         # Replace placeholders
         LC_ALL=C find "$directory" -depth -type f -exec sed -i '' -e "s/__PACKAGE__/$package_name/g" {} \;
@@ -45,7 +44,7 @@ rename_files_and_folders() {
         # Rename folders and replace placeholders
         find "$directory" -depth -type d -name "*__PACKAGE__*" -execdir bash -c 'mv "$0" "${0//__PACKAGE__/$1}"' {} "$package_name" \;
         find "$directory" -depth -type d -name "*__MODULE_PREFIX__*" -execdir bash -c 'mv "$0" "${0//__MODULE_PREFIX__/$1}"' {} "$module_prefix" \;
-        LC_ALL=C find "$directory" -d -name "__MODULE_CLASS_PREFIX__*" -type f -exec sh -c '$0 $1 ${1/__MODULE_CLASS_PREFIX__/$2}' mv {} "$module_prefix" \;
+        LC_ALL=C find "$directory" -d -name "__MODULE_CLASS_PREFIX__*" -type f -exec sh -c 'mv "$1" "$(echo $1 | sed -e "s/__MODULE_CLASS_PREFIX__/$2/g")"' sh {} $module_prefix \;
 
         return
     fi
@@ -59,8 +58,10 @@ rename_files_and_folders() {
     find "$directory" -depth -type d -name "*__TEMPLATE__*" -execdir bash -c 'mv "$0" "${0/__TEMPLATE__/$1}"' {} "$project_name" \;
     find "$directory" -depth -type d -name "*__PACKAGE__*" -execdir bash -c 'mv "$0" "${0/__PACKAGE__/$1}"' {} "$package_name" \;
     find "$directory" -depth -type d -name "*__MODULE_PREFIX__*" -execdir bash -c 'mv "$0" "${0/__MODULE_PREFIX__/$1}"' {} "$module_prefix" \;
-    LC_ALL=C find "$directory" -d -name "__MODULE_CLASS_PREFIX__*" -type f -exec sh -c '$0 $1 ${1/__MODULE_CLASS_PREFIX__/$2}' mv {} "$module_prefix" \;
-    LC_ALL=C find "$directory" -d -name "__CLASS_TEMPLATE__*" -type f -exec sh -c '$0 $1 ${1/__CLASS_TEMPLATE__/$2}' mv {} "$module_prefix" \;
+    # LC_ALL=C find "$directory" -d -name "__MODULE_CLASS_PREFIX__*" -type f -exec sh -c '$0 $1 ${1/__MODULE_CLASS_PREFIX__/$2}' mv {} "$module_prefix" \;
+    # LC_ALL=C find "$directory" -d -name "__CLASS_TEMPLATE__*" -type f -exec sh -c '$0 $1 ${1/__CLASS_TEMPLATE__/$2}' mv {} "$module_prefix" \;
+    LC_ALL=C find "$directory" -d -name "__MODULE_CLASS_PREFIX__*" -type f -exec sh -c 'mv "$1" "$(echo $1 | sed -e "s/__MODULE_CLASS_PREFIX__/$2/g")"' sh {} $module_prefix \;
+    LC_ALL=C find "$directory" -d -name "__CLASS_TEMPLATE__*" -type f -exec sh -c 'mv "$1" "$(echo $1 | sed -e "s/__CLASS_TEMPLATE__/$2/g")"' sh {} $module_prefix \;
 }
 
 # Function to display a dialog box with a message
@@ -131,7 +132,7 @@ open_finder() {
         end tell
 EOF
 )
-    echo "$path"
+    echo "${path%/}"
 }
 
 # Main function
@@ -169,7 +170,7 @@ main() {
     local MODULE_PREFIX
     if [ "$PROJECT_TYPE" == "1" ]; then
         # Show dialog box to get project details
-        RESULT=$(show_dialog "Open finder to choose the path to save your new iOS project.")
+        RESULT=$(show_dialog "Open finder to choose location for new iOS project saved?")
         if [[ $RESULT -eq 0 ]]; then
             main
         fi
@@ -187,10 +188,10 @@ main() {
             exit 1
         fi
 
-        echo -e "\033[32mProject path: $PROJECT_PATH\033[0m"
+        echo -e "\033[33mProject path: $PROJECT_PATH\033[0m"
 
         PACKAGE_NAME=$(get_input "Enter the package name, following reverse-domain style convention:" "")
-        echo -e "\033[33mPACKAGE_NAME -> $PACKAGE_NAME\033[0m"
+        echo -e "\033[33mPackage name: $PACKAGE_NAME\033[0m"
 
         # Validate package name
         if [ -z "$PACKAGE_NAME" ]; then
@@ -202,7 +203,7 @@ main() {
         fi
 
         PROJECT_NAME=$(get_input "Enter the project name:" "")
-        echo -e "\033[33mPROJECT_NAME -> $PROJECT_NAME\033[0m"
+        echo -e "\033[33mProject name: $PROJECT_NAME\033[0m"
         # Validate project name
         if [ -z "$PROJECT_NAME" ]; then
             echo -e "\033[31mError: Project name cannot be empty.\033[0m"
@@ -210,7 +211,7 @@ main() {
         fi
 
         MODULE_PREFIX=$(get_input "Enter the module prefix:" "")
-        echo -e "\033[33mMODULE_PREFIX -> $MODULE_PREFIX\033[0m"
+        echo -e "\033[33mModule prefix: $MODULE_PREFIX\033[0m"
         # Validate module prefix
         if [ -z "$MODULE_PREFIX" ]; then
             echo -e "\033[31mError: Class prefix cannot be empty.\033[0m"
@@ -218,7 +219,7 @@ main() {
         fi
     elif [ "$PROJECT_TYPE" == "2" ]; then
         # Show dialog box to get project details
-        RESULT=$(show_dialog "Open finder to choose the path to save your new iOS module project.")
+        RESULT=$(show_dialog "Open finder to choose location for new iOS module saved?")
         if [[ $RESULT -eq 0 ]]; then
             main
         fi
@@ -230,7 +231,11 @@ main() {
             exit 0
         fi
 
+        echo -e "\033[33mProject path: $PROJECT_PATH\033[0m"
+
         PACKAGE_NAME=$(get_input "Enter the package name, following reverse-domain style convention:" "")
+        echo -e "\033[33mPackage name: $PACKAGE_NAME\033[0m"
+
         # Validate package name
         if [ -z "$PACKAGE_NAME" ]; then
             echo -e "\033[31mError: Package name cannot be empty.\033[0m"
@@ -241,6 +246,8 @@ main() {
         fi
 
         MODULE_PREFIX=$(get_input "Enter the module prefix:" "")
+        echo -e "\033[33mModule prefix: $MODULE_PREFIX\033[0m"
+
         # Validate module prefix
         if [ -z "$MODULE_PREFIX" ]; then
             echo -e "\033[31mError: Class prefix cannot be empty.\033[0m"
@@ -266,11 +273,11 @@ main() {
 
         # Replace the placeholder with the replacement value
         LINE_TO_ADD="${LINE_TO_ADD//$placeholder/$MODULE_PREFIX}"
-        add_line_above_marker "$LINE_TO_ADD" "$PROJECT_PATH../Podfile"    
+        add_line_above_marker "$LINE_TO_ADD" "$PROJECT_PATH/../Podfile"
     fi
 
     if command -v pod &> /dev/null; then
-        [[ "$PROJECT_TYPE" == "2" ]] && cd "$PROJECT_PATH../" && pod install || cd "$PROJECT_PATH" && pod install
+        [[ "$PROJECT_TYPE" == "2" ]] && cd "$PROJECT_PATH/../" && pod install || cd "$PROJECT_PATH" && pod install
     fi
 
     echo -e "\033[32mProject setup completed.\033[0m"

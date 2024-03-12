@@ -12,10 +12,10 @@ import Swinject
 public final class __MODULE_PREFIX__Configuration {
 
     public private(set) static var resourceBundle: Bundle = {
-        return Bundle(for: __MODULE_PREFIX__.self).resource
+        return Bundle(for: __MODULE_PREFIX__Configuration.self).resource
     }()
 
-    public static let shared = __MODULE_PREFIX__()
+    public static let shared = __MODULE_PREFIX__Configuration()
 
     public init() {
     }
