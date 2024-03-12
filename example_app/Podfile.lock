@@ -1,0 +1,30 @@
+PODS:
+  - Swinject (2.8.3)
+  - SwinjectAutoregistration (2.8.3):
+    - Swinject (~> 2.8.3)
+
+DEPENDENCIES:
+  - Swinject (from `https://github.com/Swinject/Swinject.git`, tag `2.8.3`)
+  - SwinjectAutoregistration (= 2.8.3)
+
+SPEC REPOS:
+  trunk:
+    - SwinjectAutoregistration
+
+EXTERNAL SOURCES:
+  Swinject:
+    :git: https://github.com/Swinject/Swinject.git
+    :tag: 2.8.3
+
+CHECKOUT OPTIONS:
+  Swinject:
+    :git: https://github.com/Swinject/Swinject.git
+    :tag: 2.8.3
+
+SPEC CHECKSUMS:
+  Swinject: 893c9a543000ac2f10ee4cbaf0933c6992c935d5
+  SwinjectAutoregistration: e3ee378dc458acf78d176fc7fec3902603452667
+
+PODFILE CHECKSUM: f4629281ceb991e915837e128ba067ca6250ad21
+
+COCOAPODS: 1.15.2

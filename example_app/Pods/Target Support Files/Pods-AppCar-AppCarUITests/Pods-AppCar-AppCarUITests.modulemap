@@ -1,0 +1,6 @@
+framework module Pods_AppCar_AppCarUITests {
+  umbrella header "Pods-AppCar-AppCarUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

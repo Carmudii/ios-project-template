@@ -1,0 +1,72 @@
+# This Podfile is used to manage the dependencies for the com.carmudi.ea project.
+#
+# It specifies the workspace, platform, and target modules for the project.
+#
+# - Workspace: './Application.xcworkspace'
+# - Platform: iOS 14.0
+#
+# The dependencies are loaded from the 'Dependencies.rb' file.
+#
+# Target Modules:
+# - Common: './Modules/Common'
+# - Market: './Modules/Market'
+#
+# The target configuration for 'com.carmudi.ea' is defined below. It uses the 'com.carmudi.ea.xcodeproj' project and enables the use of frameworks.
+#
+# The target inherits dependencies from the modules and adds them as libraries.
+#
+# Please make sure to update this Podfile as needed.
+
+load "./Dependencies.rb"
+
+# Configuration
+workspace './Application.xcworkspace'
+platform :ios, '13.0'
+
+appTarget = '__TEMPLATE__'
+appTargetTest = '__TEMPLATE__Tests'
+appTargetUITest = '__TEMPLATE__UITests'
+projectPath = './__TEMPLATE__/__TEMPLATE__.xcodeproj'
+
+if !isFileExists?(projectPath)
+  puts "\e[31m !!!!!!! Error: The project file '#{projectPath}' does not exist. \e[0m"
+  raise StandardError.new("Please check the project file at path: #{filePath} and make sure it exists")
+end
+
+# Target modules if you want to add more modules dont forget to add here
+modulesDependencies = Set.new
+modulesDependencies.merge(addTarget(self, "./Modules/__MODULE_PREFIX__CoreModule"))
+# __FLAG_DEPENDENCIES_AUTO_ADD__
+
+# Target configuration 
+puts "** Add dependencies to module target application"
+target appTarget do
+  project projectPath
+  use_frameworks!
+
+  puts "\e[33m+ herited from modules\e[0m"
+  modulesDependencies.each do |dependency|
+    puts "\e[32m- #{dependency}\e[0m"
+    library(self, appTarget, dependency)
+  end
+
+  target appTargetTest do
+    inherit! :search_paths
+  end
+
+  target appTargetUITest do
+    inherit! :complete
+  end
+end
+
+# Post Install
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+
+      # Build settings for each configuration
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+
+    end
+  end
+end
