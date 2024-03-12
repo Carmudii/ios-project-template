@@ -19,7 +19,7 @@ module Target
     # 'core.RxCocoa',
     # 'core.RxSwift',
     'core.Swinject',
-    'core.'
+    'core.SwinjectAutoregistration'
     ]
 
     class << self
