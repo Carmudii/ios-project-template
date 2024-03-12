@@ -32,6 +32,12 @@ This function recursively renames files and folders and replaces placeholders in
 - Make sure to provide valid input when prompted to avoid errors during setup.
 - If you're setting up an iOS module, dependencies will be added to the Podfile automatically.
 
+## Reminder
+
+Don't forget to embed a framework:
+
+![Embed Framework](https://example.com/framework_image.png)
+
 ## License
 
 This script is licensed under the MIT License. See the LICENSE file for details.
