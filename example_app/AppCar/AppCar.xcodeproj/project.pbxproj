@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0581FBFC2C1E8835001CB635 /* UIViewController+Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581FBFB2C1E8835001CB635 /* UIViewController+Swizzling.swift */; };
+		05B22DE82C24925200F4CB23 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B22DE72C24925200F4CB23 /* OverlayManager.swift */; };
+		05B22DEA2C249B3500F4CB23 /* FloatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B22DE92C249B3500F4CB23 /* FloatingViewController.swift */; };
+		05B22DED2C249E8200F4CB23 /* CustomTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B22DEC2C249E8200F4CB23 /* CustomTransitionDelegate.swift */; };
+		05B22DEF2C249E9300F4CB23 /* CustomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B22DEE2C249E9300F4CB23 /* CustomAnimator.swift */; };
 		05BEA8D02BA02DAB00CA8E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA8CF2BA02DAB00CA8E76 /* AppDelegate.swift */; };
 		05BEA8D22BA02DAB00CA8E76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA8D12BA02DAB00CA8E76 /* SceneDelegate.swift */; };
 		05BEA8D42BA02DAB00CA8E76 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA8D32BA02DAB00CA8E76 /* HomeViewController.swift */; };
@@ -67,6 +72,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0581FBFB2C1E8835001CB635 /* UIViewController+Swizzling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Swizzling.swift"; sourceTree = "<group>"; };
+		0581FC032C1F072A001CB635 /* AppCar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppCar-Bridging-Header.h"; sourceTree = "<group>"; };
+		05B22DE72C24925200F4CB23 /* OverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayManager.swift; sourceTree = "<group>"; };
+		05B22DE92C249B3500F4CB23 /* FloatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingViewController.swift; sourceTree = "<group>"; };
+		05B22DEC2C249E8200F4CB23 /* CustomTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionDelegate.swift; sourceTree = "<group>"; };
+		05B22DEE2C249E9300F4CB23 /* CustomAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimator.swift; sourceTree = "<group>"; };
 		05BEA8CC2BA02DAB00CA8E76 /* AppCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BEA8CF2BA02DAB00CA8E76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05BEA8D12BA02DAB00CA8E76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +145,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0581FBFA2C1E881E001CB635 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0581FBFB2C1E8835001CB635 /* UIViewController+Swizzling.swift */,
+				05B22DEB2C249E7400F4CB23 /* FloatingView */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		05B22DEB2C249E7400F4CB23 /* FloatingView */ = {
+			isa = PBXGroup;
+			children = (
+				05B22DE72C24925200F4CB23 /* OverlayManager.swift */,
+				05B22DE92C249B3500F4CB23 /* FloatingViewController.swift */,
+				05B22DEC2C249E8200F4CB23 /* CustomTransitionDelegate.swift */,
+				05B22DEE2C249E9300F4CB23 /* CustomAnimator.swift */,
+			);
+			path = FloatingView;
+			sourceTree = "<group>";
+		};
 		05BEA8C32BA02DAB00CA8E76 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +190,7 @@
 		05BEA8CE2BA02DAB00CA8E76 /* AppCar */ = {
 			isa = PBXGroup;
 			children = (
+				0581FBFA2C1E881E001CB635 /* Common */,
 				05BEA9072BA02E3F00CA8E76 /* Application */,
 				05BEA9F12BA0509100CA8E76 /* Home */,
 				05BEA8FF2BA02DBC00CA8E76 /* SupportingFiles */,
@@ -203,6 +235,7 @@
 		05BEA9012BA02DE000CA8E76 /* ApplicationFiles */ = {
 			isa = PBXGroup;
 			children = (
+				0581FC032C1F072A001CB635 /* AppCar-Bridging-Header.h */,
 				05BEA8CF2BA02DAB00CA8E76 /* AppDelegate.swift */,
 				05BEA8D12BA02DAB00CA8E76 /* SceneDelegate.swift */,
 				05BEA8DA2BA02DAC00CA8E76 /* LaunchScreen.storyboard */,
@@ -377,6 +410,7 @@
 				TargetAttributes = {
 					05BEA8CB2BA02DAB00CA8E76 = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 					};
 					05BEA8E12BA02DAC00CA8E76 = {
 						CreatedOnToolsVersion = 15.3;
@@ -542,13 +576,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0581FBFC2C1E8835001CB635 /* UIViewController+Swizzling.swift in Sources */,
 				05BEA90B2BA02E3F00CA8E76 /* DIContainer.swift in Sources */,
 				05BEA9092BA02E3F00CA8E76 /* ViewControllerManager.swift in Sources */,
 				05BEA8D42BA02DAB00CA8E76 /* HomeViewController.swift in Sources */,
 				05BEA9FB2BA050E700CA8E76 /* HomeViewModel+State.swift in Sources */,
 				05BEA9F72BA050D400CA8E76 /* HomeViewModel.swift in Sources */,
 				05BEA9082BA02E3F00CA8E76 /* NavigationManager.swift in Sources */,
+				05B22DEA2C249B3500F4CB23 /* FloatingViewController.swift in Sources */,
+				05B22DEF2C249E9300F4CB23 /* CustomAnimator.swift in Sources */,
+				05B22DED2C249E8200F4CB23 /* CustomTransitionDelegate.swift in Sources */,
 				05BEA8D02BA02DAB00CA8E76 /* AppDelegate.swift in Sources */,
+				05B22DE82C24925200F4CB23 /* OverlayManager.swift in Sources */,
 				05BEA9F92BA050DE00CA8E76 /* HomeViewModel+Event.swift in Sources */,
 				05BEA90A2BA02E3F00CA8E76 /* ViewModelManager.swift in Sources */,
 				05BEA8D22BA02DAB00CA8E76 /* SceneDelegate.swift in Sources */,
@@ -724,6 +763,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -746,6 +786,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AppCar/SupportingFiles/ApplicationFiles/AppCar-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -757,6 +799,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -779,6 +822,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AppCar/SupportingFiles/ApplicationFiles/AppCar-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

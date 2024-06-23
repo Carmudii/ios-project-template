@@ -49,6 +49,12 @@ final class SecondViewController: BaseViewController, SecondPresentableScreen {
         return button
     }()
 
+    // MARK: - Public properties
+
+    // leak example
+
+    public var leak: (() -> Void)?
+
     // MARK: - Private properties
 
     private let resolver: Resolver
@@ -102,13 +108,13 @@ final class SecondViewController: BaseViewController, SecondPresentableScreen {
     }
 
     private func bindViewModel() {
-        viewModel.bindStateDidChange { [weak self] state in
+        viewModel.bindStateDidChange { state in
             switch state {
             case .goBack:
-                self?.resolver.receive(SecondNavigationService.self).back()
+                self.resolver.receive(SecondNavigationService.self).back()
 
             case .navigateToThird:
-                self?.navigateToThirdScreen()
+                self.navigateToThirdScreen()
             }
         }
     }
