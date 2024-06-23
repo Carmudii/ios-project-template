@@ -61,7 +61,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         app.window = self.window
         app.replaceRootViewController(with: container.resolve() as HomeViewController)
         self.window?.makeKeyAndVisible()
+
+        OverlayManager.shared.applyOverlay()
     }
-
 }
-
