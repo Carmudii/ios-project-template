@@ -55,9 +55,10 @@ final class FloatingViewController: UIViewController {
     private func configureUI() {
         view.addSubviews(closeButton, label)
 
+        let topSafeArea = view.safeAreaInsets.top + 50
         NSLayoutConstraint.activate([
             // CloseButton
-            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: topSafeArea),
             closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
 
             // HelloWorldLabel

@@ -28,7 +28,8 @@ final class OverlayManager {
 
     public func applyOverlay() {
 
-        guard let window = UIApplication.shared.windows.first else {
+        guard let window = UIApplication.shared.windows.last else {
+            print("Window not found")
             return
         }
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0581FBFC2C1E8835001CB635 /* UIViewController+Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581FBFB2C1E8835001CB635 /* UIViewController+Swizzling.swift */; };
+		059EFA7A2C27EE8B002F3F72 /* PictureInPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA792C27EE8B002F3F72 /* PictureInPictureView.swift */; };
+		059EFA8A2C286966002F3F72 /* PictureInPictureManager+Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA892C286966002F3F72 /* PictureInPictureManager+Converter.swift */; };
 		05B22DE82C24925200F4CB23 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B22DE72C24925200F4CB23 /* OverlayManager.swift */; };
 		05B22DEA2C249B3500F4CB23 /* FloatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B22DE92C249B3500F4CB23 /* FloatingViewController.swift */; };
 		05B22DED2C249E8200F4CB23 /* CustomTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B22DEC2C249E8200F4CB23 /* CustomTransitionDelegate.swift */; };
@@ -74,6 +76,8 @@
 /* Begin PBXFileReference section */
 		0581FBFB2C1E8835001CB635 /* UIViewController+Swizzling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Swizzling.swift"; sourceTree = "<group>"; };
 		0581FC032C1F072A001CB635 /* AppCar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppCar-Bridging-Header.h"; sourceTree = "<group>"; };
+		059EFA792C27EE8B002F3F72 /* PictureInPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureInPictureView.swift; sourceTree = "<group>"; };
+		059EFA892C286966002F3F72 /* PictureInPictureManager+Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PictureInPictureManager+Converter.swift"; sourceTree = "<group>"; };
 		05B22DE72C24925200F4CB23 /* OverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayManager.swift; sourceTree = "<group>"; };
 		05B22DE92C249B3500F4CB23 /* FloatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingViewController.swift; sourceTree = "<group>"; };
 		05B22DEC2C249E8200F4CB23 /* CustomTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionDelegate.swift; sourceTree = "<group>"; };
@@ -149,9 +153,19 @@
 			isa = PBXGroup;
 			children = (
 				0581FBFB2C1E8835001CB635 /* UIViewController+Swizzling.swift */,
+				059EFA782C27EE79002F3F72 /* PiP */,
 				05B22DEB2C249E7400F4CB23 /* FloatingView */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		059EFA782C27EE79002F3F72 /* PiP */ = {
+			isa = PBXGroup;
+			children = (
+				059EFA792C27EE8B002F3F72 /* PictureInPictureView.swift */,
+				059EFA892C286966002F3F72 /* PictureInPictureManager+Converter.swift */,
+			);
+			path = PiP;
 			sourceTree = "<group>";
 		};
 		05B22DEB2C249E7400F4CB23 /* FloatingView */ = {
@@ -578,10 +592,12 @@
 			files = (
 				0581FBFC2C1E8835001CB635 /* UIViewController+Swizzling.swift in Sources */,
 				05BEA90B2BA02E3F00CA8E76 /* DIContainer.swift in Sources */,
+				059EFA7A2C27EE8B002F3F72 /* PictureInPictureView.swift in Sources */,
 				05BEA9092BA02E3F00CA8E76 /* ViewControllerManager.swift in Sources */,
 				05BEA8D42BA02DAB00CA8E76 /* HomeViewController.swift in Sources */,
 				05BEA9FB2BA050E700CA8E76 /* HomeViewModel+State.swift in Sources */,
 				05BEA9F72BA050D400CA8E76 /* HomeViewModel.swift in Sources */,
+				059EFA8A2C286966002F3F72 /* PictureInPictureManager+Converter.swift in Sources */,
 				05BEA9082BA02E3F00CA8E76 /* NavigationManager.swift in Sources */,
 				05B22DEA2C249B3500F4CB23 /* FloatingViewController.swift in Sources */,
 				05B22DEF2C249E9300F4CB23 /* CustomAnimator.swift in Sources */,

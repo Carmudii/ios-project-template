@@ -11,5 +11,7 @@ extension HomeViewModel {
     enum State: ViewModelState {
         case navigateToSecond
         case navigateToThird
+        case enterPipMode
+        case updateTimer(String)
     }
 }
