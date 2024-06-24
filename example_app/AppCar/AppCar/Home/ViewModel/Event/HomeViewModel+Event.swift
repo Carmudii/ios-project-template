@@ -11,5 +11,6 @@ extension HomeViewModel {
     enum Event: ViewModelEvent {
         case navigateToSecond
         case navigateToThird
+        case enterPipMode
     }
 }
