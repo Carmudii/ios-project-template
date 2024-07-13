@@ -1,20 +1,10 @@
-# Version of library
-Version = {
-    core: {
-        RxSwift: '5.1.3',
-        RxCocoa: '5.1.3',
-        Swinject: '2.8.3',
-        SwinjectAutoregistration: '2.8.3',
-    }
-}
-
 # Library hash contains the libraries to be added to the podfile
 Library = {
     core: {
-        'RxSwift' => Version[:core][:RxSwift],
-        'RxCocoa' => Version[:core][:RxCocoa],
-        'Swinject' => { git: 'https://github.com/Swinject/Swinject.git', tag: Version[:core][:Swinject] },
-        'SwinjectAutoregistration' => Version[:core][:SwinjectAutoregistration],
+        'RxSwift' => '5.1.3',
+        'RxCocoa' => '5.1.3',
+        'Swinject' => { git: 'https://github.com/Swinject/Swinject.git', tag: '2.8.3' },
+        'SwinjectAutoregistration' => '2.8.3'
     }
 #   Add more libraries below here if you want add a isolate library for each module
 #   Don't forget to add the version in the Version variable too
