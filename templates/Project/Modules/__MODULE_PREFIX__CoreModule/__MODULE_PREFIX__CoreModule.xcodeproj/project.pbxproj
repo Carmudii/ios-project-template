@@ -19,7 +19,7 @@
 		05BEA9A62BA031B300CA8E76 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA9982BA031B300CA8E76 /* BaseViewController.swift */; };
 		05BEA9A72BA031B300CA8E76 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA99A2BA031B300CA8E76 /* ViewModel.swift */; };
 		05BEA9A82BA031B300CA8E76 /* __MODULE_PREFIX__CoreModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA99E2BA031B300CA8E76 /* __MODULE_PREFIX__CoreModule.swift */; };
-		05BEA9AA2BA031B800CA8E76 /* build.pod.rb in Resources */ = {isa = PBXBuildFile; fileRef = 05BEA9A92BA031B800CA8E76 /* build.pod.rb */; };
+		05BEA9AA2BA031B800CA8E76 /* ModuleConfig.pod.rb in Resources */ = {isa = PBXBuildFile; fileRef = 05BEA9A92BA031B800CA8E76 /* ModuleConfig.pod.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,7 @@
 		05BEA9982BA031B300CA8E76 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		05BEA99A2BA031B300CA8E76 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		05BEA99E2BA031B300CA8E76 /* __MODULE_PREFIX__CoreModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = __MODULE_PREFIX__CoreModule.swift; sourceTree = "<group>"; };
-		05BEA9A92BA031B800CA8E76 /* build.pod.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = build.pod.rb; sourceTree = SOURCE_ROOT; };
+		05BEA9A92BA031B800CA8E76 /* ModuleConfig.pod.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ModuleConfig.pod.rb; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 		05BEA96D2BA0313C00CA8E76 /* __MODULE_PREFIX__CoreModule */ = {
 			isa = PBXGroup;
 			children = (
-				05BEA9A92BA031B800CA8E76 /* build.pod.rb */,
+				05BEA9A92BA031B800CA8E76 /* ModuleConfig.pod.rb */,
 				05BEA99E2BA031B300CA8E76 /* __MODULE_PREFIX__CoreModule.swift */,
 				05BEA99D2BA031B300CA8E76 /* Module */,
 				05BEA9872BA031B300CA8E76 /* Resources */,
@@ -333,7 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05BEA99F2BA031B300CA8E76 /* Colors.xcassets in Resources */,
-				05BEA9AA2BA031B800CA8E76 /* build.pod.rb in Resources */,
+				05BEA9AA2BA031B800CA8E76 /* ModuleConfig.pod.rb in Resources */,
 				05BEA9A02BA031B300CA8E76 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

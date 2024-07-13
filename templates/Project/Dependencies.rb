@@ -1,20 +1,10 @@
-# Version of library
-Version = {
-    core: {
-        RxSwift: '5.1.3',
-        RxCocoa: '5.1.3',
-        Swinject: '2.8.3',
-        SwinjectAutoregistration: '2.8.3',
-    }
-}
-
 # Library hash contains the libraries to be added to the podfile
 Library = {
     core: {
-        'RxSwift' => Version[:core][:RxSwift],
-        'RxCocoa' => Version[:core][:RxCocoa],
-        'Swinject' => { git: 'https://github.com/Swinject/Swinject.git', tag: Version[:core][:Swinject] },
-        'SwinjectAutoregistration' => Version[:core][:SwinjectAutoregistration],
+        'RxSwift' => '5.1.3',
+        'RxCocoa' => '5.1.3',
+        'Swinject' => { git: 'https://github.com/Swinject/Swinject.git', tag: '2.8.3' },
+        'SwinjectAutoregistration' => '2.8.3'
     }
 #   Add more libraries below here if you want add a isolate library for each module
 #   Don't forget to add the version in the Version variable too
@@ -75,13 +65,13 @@ end
 #
 # This method adds a target to the Podfile.
 # It takes in the podfileContext and the targetPath as parameters.
-# It first checks if the build.pod.rb file exists at the targetPath.
+# It first checks if the ModuleConfig.pod.rb file exists at the targetPath.
 # If the file does not exist, it returns an empty array.
 # If the file exists, it loads the file and prints a message indicating the target name.
 # It then defines a lambda function that will be executed in the context of the podfileContext.
 # Inside the lambda function, it defines a target with the name obtained from the Target class.
 def addTarget(podfileContext, targetPath)
-    filePath = "#{targetPath}/build.pod.rb"
+    filePath = "#{targetPath}/ModuleConfig.pod.rb"
     
     if !isFileExists?(filePath)
         puts "\e[31m !!!!!!! Configuration file: #{filePath} does not exists. \e[0m"
@@ -102,9 +92,17 @@ def addTarget(podfileContext, targetPath)
 
             project projectPath
             use_frameworks!
+
+            # Add dependencies
             Target.dependencies.each do |dependency|
                 puts "\e[32m- #{dependency}\e[0m"
                 library(self, Target.name, dependency)
+            end
+
+            # Add test targets
+            puts "** Add test targets to module #{Target.name}"
+            target "#{Target.name}Tests" do
+                inherit! :complete
             end
         end
     end
