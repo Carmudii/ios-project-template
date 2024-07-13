@@ -75,13 +75,13 @@ end
 #
 # This method adds a target to the Podfile.
 # It takes in the podfileContext and the targetPath as parameters.
-# It first checks if the build.pod.rb file exists at the targetPath.
+# It first checks if the ModuleConfig.pod.rb file exists at the targetPath.
 # If the file does not exist, it returns an empty array.
 # If the file exists, it loads the file and prints a message indicating the target name.
 # It then defines a lambda function that will be executed in the context of the podfileContext.
 # Inside the lambda function, it defines a target with the name obtained from the Target class.
 def addTarget(podfileContext, targetPath)
-    filePath = "#{targetPath}/build.pod.rb"
+    filePath = "#{targetPath}/ModuleConfig.pod.rb"
     
     if !isFileExists?(filePath)
         puts "\e[31m !!!!!!! Configuration file: #{filePath} does not exists. \e[0m"
@@ -102,9 +102,17 @@ def addTarget(podfileContext, targetPath)
 
             project projectPath
             use_frameworks!
+
+            # Add dependencies
             Target.dependencies.each do |dependency|
                 puts "\e[32m- #{dependency}\e[0m"
                 library(self, Target.name, dependency)
+            end
+
+            # Add test targets
+            puts "** Add test targets to module #{Target.name}"
+            target "#{Target.name}Tests" do
+                inherit! :complete
             end
         end
     end

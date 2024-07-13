@@ -1,20 +1,37 @@
-# Version of library
-Version = {
-    core: {
-        RxSwift: '5.1.3',
-        RxCocoa: '5.1.3',
-        Swinject: '2.8.3',
-        SwinjectAutoregistration: '2.8.3',
-    }
-}
-
 # Library hash contains the libraries to be added to the podfile
 Library = {
     core: {
-        'RxSwift' => Version[:core][:RxSwift],
-        'RxCocoa' => Version[:core][:RxCocoa],
-        'Swinject' => { git: 'https://github.com/Swinject/Swinject.git', tag: Version[:core][:Swinject] },
-        'SwinjectAutoregistration' => Version[:core][:SwinjectAutoregistration],
+        'SwiftLint' => '0.41.0',
+        'lottie-ios' => '4.2.0',
+        'Kingfisher' => { git: 'https://github.com/onevcat/Kingfisher.git', tag: '7.7.0' },
+        'IQKeyboardManagerSwift' => '6.5.11',
+        'SVProgressHUD' => { git: 'https://github.com/SVProgressHUD/SVProgressHUD.git', tag: '2.2.5' },
+        'netfox' => '1.21.0',
+        'JTAppleCalendar' => '8.0.5',
+        'iCarousel' => '1.8.3',
+        'SwiftyAttributes' => '5.3.0',
+        'Shimmer' => '1.0.2',
+        'DGCharts' => '5.1.0',
+        'AdvancedPageControl' => '0.1.5',
+        'ReachabilitySwift' => '5.0.0',
+        'JWTDecode' => '3.0.1',
+        'CryptoSwift' => { git: 'https://github.com/krzyzanowskim/CryptoSwift.git', tag: '1.7.1' },
+        'SkeletonView' => '1.30.4',
+        'Swinject' => { git: 'https://github.com/Swinject/Swinject.git', tag: '2.8.3' },
+        'SwinjectAutoregistration' => '2.8.3',
+        'Firebase' => { git: 'https://github.com/firebase/firebase-ios-sdk.git', tag: '10.16.0' },
+        'FirebaseAuth' => { git: 'https://github.com/firebase/firebase-ios-sdk.git', tag: '10.16.0' },
+        'FirebaseMessaging' => { git: 'https://github.com/firebase/firebase-ios-sdk.git', tag: '10.16.0' },
+        'FirebaseAnalytics' => { git: 'https://github.com/firebase/firebase-ios-sdk.git', tag: '10.16.0' },
+        'FirebaseCrashlytics' => { git: 'https://github.com/firebase/firebase-ios-sdk.git', tag: '10.16.0' },
+        'FirebaseRemoteConfig' => { git: 'https://github.com/firebase/firebase-ios-sdk.git', tag: '10.16.0' },
+        'RxSwift' => '5.1.1',
+        'RxCocoa' => '5.1.1',
+        'Moya/RxSwift' => '14.0.0',
+        'Starscream' => '4.0.6',
+        'KeychainSwift' => '19.0.0',
+        'SwiftProtobuf' => '1.24.0',
+        'CoreStore' => { git: 'https://github.com/JohnEstropia/CoreStore.git', tag: '9.2.0' },
     }
 #   Add more libraries below here if you want add a isolate library for each module
 #   Don't forget to add the version in the Version variable too
@@ -81,7 +98,7 @@ end
 # It then defines a lambda function that will be executed in the context of the podfileContext.
 # Inside the lambda function, it defines a target with the name obtained from the Target class.
 def addTarget(podfileContext, targetPath)
-    filePath = "#{targetPath}/build.pod.rb"
+    filePath = "#{targetPath}/ModuleConfig.pod.rb"
     
     if !isFileExists?(filePath)
         puts "\e[31m !!!!!!! Configuration file: #{filePath} does not exists. \e[0m"
@@ -102,9 +119,17 @@ def addTarget(podfileContext, targetPath)
 
             project projectPath
             use_frameworks!
+
+            # Add dependencies
             Target.dependencies.each do |dependency|
                 puts "\e[32m- #{dependency}\e[0m"
                 library(self, Target.name, dependency)
+            end
+
+            # Add test targets
+            puts "** Add test targets to module #{Target.name}"
+            target "#{Target.name}Tests" do
+                inherit! :complete
             end
         end
     end
