@@ -10,6 +10,8 @@ import Swinject
 final class ViewControllerManager: Assembly {
 
     func assemble(container: Container) {
-        // TODO: - Register your view controllers here
+        container.register(ViewController.self) { resolver in
+            return ViewController()
+        }.inObjectScope(.transient)
     }
 }

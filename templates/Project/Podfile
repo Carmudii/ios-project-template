@@ -34,6 +34,7 @@ end
 
 # Target modules if you want to add more modules dont forget to add here
 modulesDependencies = Set.new
+modulesDependencies.merge(addTarget(self, "./Modules/__MODULE_PREFIX__NavigationModule"))
 modulesDependencies.merge(addTarget(self, "./Modules/__MODULE_PREFIX__CoreModule"))
 # __FLAG_DEPENDENCIES_AUTO_ADD__
 

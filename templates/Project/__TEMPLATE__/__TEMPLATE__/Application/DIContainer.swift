@@ -6,16 +6,16 @@
 //
 
 import Swinject
+import __MODULE_PREFIX__NavigationModule
 import __MODULE_PREFIX__CoreModule
 
 /// The protocol for managing and resolving dependencies in the application.
-protocol DIContainerService {
+protocol DIContainerProtocol {
 
-    /// This class represents a dependency container that is responsible for managing and resolving dependencies.
-    ///
-    /// It contains an `assembler` object that is used to configure the container with the necessary dependencies,
-    /// and a `container` object that holds the resolved dependencies.
+    /// The `Assembler` responsible for managing the registration and resolution of services.
     var assembler: Assembler { get }
+
+    /// The `Container` that holds all the service registrations.
     var container: Container { get }
 
     /// Sets up a module in the container.
@@ -28,9 +28,10 @@ protocol DIContainerService {
     func resolve<Service>(_ serviceType: Service.Type) -> Service
 }
 
-extension DIContainerService {
+extension DIContainerProtocol {
     /// Resolves a service from the container.
     /// - Parameter serviceType: The type of the service to be resolved.
+    /// hgxsz
     /// - Returns: An instance of the resolved service.
     func resolve<Service>(_ serviceType: Service.Type = Service.self) -> Service {
         guard let service = assembler.resolver.resolve(serviceType) else {
@@ -42,16 +43,15 @@ extension DIContainerService {
 }
 
 /// The `DependencyContainer` class is responsible for managing and resolving dependencies in the application.
-final class DIContainer: DIContainerService {
+final class DIContainer: DIContainerProtocol {
 
     /// The shared instance of the `DependencyContainer`.
     static let shared = DIContainer()
 
-    /// This class represents a dependency container that is responsible for managing and resolving dependencies.
-    ///
-    /// It contains an `assembler` object that is used to configure the container with the necessary dependencies,
-    /// and a `container` object that holds the resolved dependencies.
+    /// The `Assembler` used for managing the registration and resolution of services.
     internal let assembler: Assembler
+
+    /// The `Container` that holds all the service registrations.
     internal let container: Container
 
     /// Initializes a new instance of `DependencyContainer`.
@@ -68,18 +68,19 @@ final class DIContainer: DIContainerService {
     /// Sets up the modules in the container.
     internal func registerAllModules() {
         let modules: [ModuleAssembler] = [
+            AppNavigationModuleConfiguration.configureAssembler(in: assembler)
             // Add more module assemblers here
         ]
 
         // Register your application managers here
         assembler.apply(assemblies: [
-            NavigationManager(),
+            AppNavigationManager(),
             ViewControllerManager(),
             ViewModelManager()
         ])
 
         modules.forEach { module in
-            container.register(ModuleAssembler.self) { _ in
+            container.register(ModuleAssembler.self) { [module] _ in
                 return module
             }.inObjectScope(.container)
         }

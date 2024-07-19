@@ -1,5 +1,5 @@
 //
-//  __MODULE_PREFIX__CoreModule.swift
+//  ≈≈≈≈≈CoreModule.swift
 //  __MODULE_PREFIX__
 //
 //  Created by Car mudi on 11/07/23.

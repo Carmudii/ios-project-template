@@ -20,12 +20,12 @@ final class __MODULE_PREFIX__Assembler: ModuleAssembler {
 
     public func registerManagers() {
         let assembly: [Assembly] = [
-            NavigationManager(),
-            ViewControllerManager(),
-            ViewModelManager(),
-            UseCaseManager(),
+            DataSourceManager(),
             RepositoryManager(),
-            DataSourceManager()
+            UseCaseManager(),
+            ViewModelManager(),
+            ViewControllerManager()
+
         ]
 
         assembler.apply(assemblies: assembly)

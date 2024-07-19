@@ -13,13 +13,13 @@
 		05BEA9A02BA031B300CA8E76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BEA9862BA031B300CA8E76 /* Images.xcassets */; };
 		05BEA9A12BA031B300CA8E76 /* Bundle + Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA9882BA031B300CA8E76 /* Bundle + Resource.swift */; };
 		05BEA9A22BA031B300CA8E76 /* Resolver + Receive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA98B2BA031B300CA8E76 /* Resolver + Receive.swift */; };
-		05BEA9A32BA031B300CA8E76 /* AppNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA98E2BA031B300CA8E76 /* AppNavigation.swift */; };
 		05BEA9A42BA031B300CA8E76 /* ModuleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA9912BA031B300CA8E76 /* ModuleAssembler.swift */; };
 		05BEA9A52BA031B300CA8E76 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA9962BA031B300CA8E76 /* BaseView.swift */; };
 		05BEA9A62BA031B300CA8E76 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA9982BA031B300CA8E76 /* BaseViewController.swift */; };
 		05BEA9A72BA031B300CA8E76 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA99A2BA031B300CA8E76 /* ViewModel.swift */; };
 		05BEA9A82BA031B300CA8E76 /* __MODULE_PREFIX__CoreModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA99E2BA031B300CA8E76 /* __MODULE_PREFIX__CoreModule.swift */; };
 		05BEA9AA2BA031B800CA8E76 /* ModuleConfig.pod.rb in Resources */ = {isa = PBXBuildFile; fileRef = 05BEA9A92BA031B800CA8E76 /* ModuleConfig.pod.rb */; };
+		05E345B42C4AF050002248D8 /* ViewController + Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E345B12C4AF050002248D8 /* ViewController + Representable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,13 +40,13 @@
 		05BEA9862BA031B300CA8E76 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		05BEA9882BA031B300CA8E76 /* Bundle + Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle + Resource.swift"; sourceTree = "<group>"; };
 		05BEA98B2BA031B300CA8E76 /* Resolver + Receive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Resolver + Receive.swift"; sourceTree = "<group>"; };
-		05BEA98E2BA031B300CA8E76 /* AppNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigation.swift; sourceTree = "<group>"; };
 		05BEA9912BA031B300CA8E76 /* ModuleAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleAssembler.swift; sourceTree = "<group>"; };
 		05BEA9962BA031B300CA8E76 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		05BEA9982BA031B300CA8E76 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		05BEA99A2BA031B300CA8E76 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		05BEA99E2BA031B300CA8E76 /* __MODULE_PREFIX__CoreModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = __MODULE_PREFIX__CoreModule.swift; sourceTree = "<group>"; };
 		05BEA9A92BA031B800CA8E76 /* ModuleConfig.pod.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ModuleConfig.pod.rb; sourceTree = SOURCE_ROOT; };
+		05E345B12C4AF050002248D8 /* ViewController + Representable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController + Representable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +141,7 @@
 		05BEA98D2BA031B300CA8E76 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				05E345B32C4AF050002248D8 /* UIKit */,
 				05BEA98A2BA031B300CA8E76 /* Foundation */,
 				05BEA98C2BA031B300CA8E76 /* Swinject */,
 			);
@@ -151,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				05BEA98D2BA031B300CA8E76 /* Extension */,
-				05BEA98E2BA031B300CA8E76 /* AppNavigation.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -238,6 +238,22 @@
 				05BEA99C2BA031B300CA8E76 /* Presentation */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		05E345B22C4AF050002248D8 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				05E345B12C4AF050002248D8 /* ViewController + Representable.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		05E345B32C4AF050002248D8 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				05E345B22C4AF050002248D8 /* UIViewController */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,11 +369,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				05BEA9A42BA031B300CA8E76 /* ModuleAssembler.swift in Sources */,
-				05BEA9A32BA031B300CA8E76 /* AppNavigation.swift in Sources */,
 				05BEA9A52BA031B300CA8E76 /* BaseView.swift in Sources */,
 				05BEA9A12BA031B300CA8E76 /* Bundle + Resource.swift in Sources */,
 				05BEA9A22BA031B300CA8E76 /* Resolver + Receive.swift in Sources */,
 				05BEA9A82BA031B300CA8E76 /* __MODULE_PREFIX__CoreModule.swift in Sources */,
+				05E345B42C4AF050002248D8 /* ViewController + Representable.swift in Sources */,
 				05BEA9A62BA031B300CA8E76 /* BaseViewController.swift in Sources */,
 				05BEA9A72BA031B300CA8E76 /* ViewModel.swift in Sources */,
 			);

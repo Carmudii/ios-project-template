@@ -11,18 +11,17 @@
 		05BEA9262BA02F2A00CA8E76 /* __MODULE_PREFIX__Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA9252BA02F2A00CA8E76 /* __MODULE_PREFIX__Tests.swift */; };
 		05BEA9512BA02FB500CA8E76 /* Bundle + Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA9302BA02FB500CA8E76 /* Bundle + Resource.swift */; };
 		05BEA9522BA02FB500CA8E76 /* DataSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA9362BA02FB500CA8E76 /* DataSourceManager.swift */; };
-		05BEA9532BA02FB500CA8E76 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA9372BA02FB500CA8E76 /* NavigationManager.swift */; };
 		05BEA9542BA02FB500CA8E76 /* RepositoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA9382BA02FB500CA8E76 /* RepositoryManager.swift */; };
 		05BEA9552BA02FB500CA8E76 /* UseCaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA9392BA02FB500CA8E76 /* UseCaseManager.swift */; };
 		05BEA9562BA02FB500CA8E76 /* ViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA93A2BA02FB500CA8E76 /* ViewControllerManager.swift */; };
 		05BEA9572BA02FB500CA8E76 /* ViewModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA93B2BA02FB500CA8E76 /* ViewModelManager.swift */; };
-		05BEA9582BA02FB500CA8E76 /* __MODULE_PREFIX__NavigationRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA93D2BA02FB500CA8E76 /* __MODULE_PREFIX__NavigationRepresentation.swift */; };
-		05BEA9592BA02FB500CA8E76 /* __MODULE_PREFIX__NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA93E2BA02FB500CA8E76 /* __MODULE_PREFIX__NavigationRoute.swift */; };
 		05BEA95A2BA02FB500CA8E76 /* __MODULE_PREFIX__Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA9402BA02FB500CA8E76 /* __MODULE_PREFIX__Assembler.swift */; };
 		05BEA95E2BA02FB500CA8E76 /* __MODULE_PREFIX__.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEA94D2BA02FB500CA8E76 /* __MODULE_PREFIX__.swift */; };
 		05BEA95F2BA02FB500CA8E76 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BEA94E2BA02FB500CA8E76 /* Colors.xcassets */; };
 		05BEA9602BA02FB500CA8E76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BEA94F2BA02FB500CA8E76 /* Images.xcassets */; };
 		05BEA9AC2BA032AB00CA8E76 /* ModuleConfig.pod.rb in Resources */ = {isa = PBXBuildFile; fileRef = 05BEA9AB2BA032AB00CA8E76 /* ModuleConfig.pod.rb */; };
+		05E345AF2C4AEE9D002248D8 /* __MODULE_PREFIX__NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E345AC2C4AEE9D002248D8 /* __MODULE_PREFIX__NavigationService.swift */; };
+		05E345B02C4AEE9D002248D8 /* ScreenRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E345AD2C4AEE9D002248D8 /* ScreenRepresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,18 +40,17 @@
 		05BEA9252BA02F2A00CA8E76 /* __MODULE_PREFIX__Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __MODULE_PREFIX__Tests.swift; sourceTree = "<group>"; };
 		05BEA9302BA02FB500CA8E76 /* Bundle + Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle + Resource.swift"; sourceTree = "<group>"; };
 		05BEA9362BA02FB500CA8E76 /* DataSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceManager.swift; sourceTree = "<group>"; };
-		05BEA9372BA02FB500CA8E76 /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		05BEA9382BA02FB500CA8E76 /* RepositoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryManager.swift; sourceTree = "<group>"; };
 		05BEA9392BA02FB500CA8E76 /* UseCaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseManager.swift; sourceTree = "<group>"; };
 		05BEA93A2BA02FB500CA8E76 /* ViewControllerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerManager.swift; sourceTree = "<group>"; };
 		05BEA93B2BA02FB500CA8E76 /* ViewModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelManager.swift; sourceTree = "<group>"; };
-		05BEA93D2BA02FB500CA8E76 /* __MODULE_PREFIX__NavigationRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = __MODULE_PREFIX__NavigationRepresentation.swift; sourceTree = "<group>"; };
-		05BEA93E2BA02FB500CA8E76 /* __MODULE_PREFIX__NavigationRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = __MODULE_PREFIX__NavigationRoute.swift; sourceTree = "<group>"; };
 		05BEA9402BA02FB500CA8E76 /* __MODULE_PREFIX__Assembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = __MODULE_PREFIX__Assembler.swift; sourceTree = "<group>"; };
 		05BEA94D2BA02FB500CA8E76 /* __MODULE_PREFIX__.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = __MODULE_PREFIX__.swift; sourceTree = "<group>"; };
 		05BEA94E2BA02FB500CA8E76 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		05BEA94F2BA02FB500CA8E76 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		05BEA9AB2BA032AB00CA8E76 /* ModuleConfig.pod.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ModuleConfig.pod.rb; sourceTree = SOURCE_ROOT; };
+		05E345AC2C4AEE9D002248D8 /* __MODULE_PREFIX__NavigationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = __MODULE_PREFIX__NavigationService.swift; sourceTree = "<group>"; };
+		05E345AD2C4AEE9D002248D8 /* ScreenRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRepresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				05BEA9362BA02FB500CA8E76 /* DataSourceManager.swift */,
-				05BEA9372BA02FB500CA8E76 /* NavigationManager.swift */,
 				05BEA9382BA02FB500CA8E76 /* RepositoryManager.swift */,
 				05BEA9392BA02FB500CA8E76 /* UseCaseManager.swift */,
 				05BEA93A2BA02FB500CA8E76 /* ViewControllerManager.swift */,
@@ -163,20 +160,10 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
-		05BEA93F2BA02FB500CA8E76 /* NavigationRoute */ = {
-			isa = PBXGroup;
-			children = (
-				05BEA93D2BA02FB500CA8E76 /* __MODULE_PREFIX__NavigationRepresentation.swift */,
-				05BEA93E2BA02FB500CA8E76 /* __MODULE_PREFIX__NavigationRoute.swift */,
-			);
-			path = NavigationRoute;
-			sourceTree = "<group>";
-		};
 		05BEA9412BA02FB500CA8E76 /* DI */ = {
 			isa = PBXGroup;
 			children = (
 				05BEA93C2BA02FB500CA8E76 /* Assembly */,
-				05BEA93F2BA02FB500CA8E76 /* NavigationRoute */,
 				05BEA9402BA02FB500CA8E76 /* __MODULE_PREFIX__Assembler.swift */,
 			);
 			path = DI;
@@ -208,6 +195,7 @@
 		05BEA94B2BA02FB500CA8E76 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				05E345AE2C4AEE9D002248D8 /* Navigation */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -231,6 +219,15 @@
 				05BEA94F2BA02FB500CA8E76 /* Images.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		05E345AE2C4AEE9D002248D8 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				05E345AC2C4AEE9D002248D8 /* __MODULE_PREFIX__NavigationService.swift */,
+				05E345AD2C4AEE9D002248D8 /* ScreenRepresentation.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,13 +346,12 @@
 				05BEA9542BA02FB500CA8E76 /* RepositoryManager.swift in Sources */,
 				05BEA9572BA02FB500CA8E76 /* ViewModelManager.swift in Sources */,
 				05BEA9552BA02FB500CA8E76 /* UseCaseManager.swift in Sources */,
+				05E345AF2C4AEE9D002248D8 /* __MODULE_PREFIX__NavigationService.swift in Sources */,
 				05BEA9512BA02FB500CA8E76 /* Bundle + Resource.swift in Sources */,
 				05BEA95E2BA02FB500CA8E76 /* __MODULE_PREFIX__.swift in Sources */,
 				05BEA95A2BA02FB500CA8E76 /* __MODULE_PREFIX__Assembler.swift in Sources */,
+				05E345B02C4AEE9D002248D8 /* ScreenRepresentation.swift in Sources */,
 				05BEA9562BA02FB500CA8E76 /* ViewControllerManager.swift in Sources */,
-				05BEA9532BA02FB500CA8E76 /* NavigationManager.swift in Sources */,
-				05BEA9582BA02FB500CA8E76 /* __MODULE_PREFIX__NavigationRepresentation.swift in Sources */,
-				05BEA9592BA02FB500CA8E76 /* __MODULE_PREFIX__NavigationRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
