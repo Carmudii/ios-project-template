@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import BaseModule
 
 /// This protocol represents a view controller that can be presented.
 public protocol RepresentableViewController {

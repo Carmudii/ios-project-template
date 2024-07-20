@@ -11,7 +11,7 @@ final class ViewControllerManager: Assembly {
 
     func assemble(container: Container) {
         container.register(ViewController.self) { resolver in
-            return ViewController()
+            return ViewController(resolver: resolver)
         }.inObjectScope(.transient)
     }
 }
